@@ -1,5 +1,8 @@
 const inquirer = require("inquirer");
-const shapes = require("/shapes/shapes.js");
+// const Shapes = require("/lib/shapes.js");
+
+// const shape1 = new Shapes();
+// console.log(shape1);
 
 const circleQuestions = {};
 const squareQuestions = {};
@@ -20,7 +23,7 @@ const questions = [
     type: "list",
     message: "Select a Shape",
     name: "shape",
-    choices: [Circle, Triangle, Square],
+    choices: ["Circle", "Triangle", "Square"],
   },
   {
     type: "input",
@@ -28,11 +31,12 @@ const questions = [
     message: "Enter the fill color your shape:", ////Validate for color? or use the class?
   },
 ];
-
-function writetoFile() {}
+function writetoFile() {
+  return "this";
+}
 
 function init() {
-  inquire
+  inquirer
     .prompt(questions)
     .then((answers) => {
       writetoFile(answers);
