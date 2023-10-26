@@ -1,7 +1,8 @@
 const inquirer = require("inquirer");
-// const Shapes = require("/lib/shapes.js");
+const Shape = require("./lib/shapes");
+// const Validate = require("./lib/validate");
 
-// const shape1 = new Shapes();
+const shape1 = new Shape();
 // console.log(shape1);
 
 const circleQuestions = {};
@@ -18,6 +19,11 @@ const questions = [
     type: "input",
     name: "textColor",
     message: "Enter the text color for the logo:",
+    validate: () => {
+      if (this.name.length > 3) {
+        return console.log("Please enter up to 3 characters");
+      }
+    },
   },
   {
     type: "list",
@@ -32,14 +38,22 @@ const questions = [
   },
 ];
 function writetoFile() {
-  return "this";
+  //// New object created here const whateverShape = new ChosenShape(required params)
 }
 
 function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      writetoFile(answers);
+      if (answers.shape === "circle") {
+        const newCircle = new Circle(
+          answers.shape,
+          answers.fillColor,
+          answers.logoText,
+          answers.textColor
+        );
+        return newCircle.render();
+      }
     })
     .catch((error) => {
       if (error.isTtyError) {
