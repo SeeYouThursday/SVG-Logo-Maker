@@ -2,12 +2,11 @@ const inquirer = require("inquirer");
 const Shape = require("./lib/shapes");
 // const Validate = require("./lib/validate");
 
-const shape1 = new Shape();
-// console.log(shape1);
 
-const circleQuestions = {};
-const squareQuestions = {};
-const triangleQuestions = {};
+
+// const circleQuestions = {};
+// const squareQuestions = {};
+// const triangleQuestions = {};
 
 const questions = [
   {
@@ -19,11 +18,11 @@ const questions = [
     type: "input",
     name: "textColor",
     message: "Enter the text color for the logo:",
-    validate: () => {
-      if (this.name.length > 3) {
-        return console.log("Please enter up to 3 characters");
-      }
-    },
+    // validate: () => {
+    //   if (this.name.length > 3) {
+    //     return console.log("Please enter up to 3 characters");
+    //   }
+    // },
   },
   {
     type: "list",
@@ -45,13 +44,15 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      if (answers.shape === "circle") {
+      console.log(answers);
+      if (answers.shape == "Circle") {
         const newCircle = new Circle(
           answers.shape,
           answers.fillColor,
           answers.logoText,
           answers.textColor
         );
+        const newFill = newCircle.setFill(answers.fillColor);
         return newCircle.render();
       }
     })
