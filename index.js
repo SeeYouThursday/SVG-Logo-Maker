@@ -35,8 +35,28 @@ const returnCircle = (answers) => {
     answers.logoText,
     answers.textColor
   );
-  const renderCircle = circle.htmlRender();
-  writetoFile("logo.svg", `${renderCircle}`);
+  circle.htmlRender();
+  writetoFile("logo.svg", `${circle.htmlRender()}`);
+};
+
+const returnSquare = (answers) => {
+  const square = new Square(
+    answers.fillColor,
+    answers.logoText,
+    answers.textColor
+  );
+  square.htmlRender();
+  writetoFile("logo.svg", `${square.htmlRender()}`);
+};
+
+const returnTriangle = (answers) => {
+  const triangle = new Triangle(
+    answers.fillColor,
+    answers.logoText,
+    answers.textColtriangle
+  );
+  triangle.htmlRender();
+  writetoFile("logo.svg", `${triangle.htmlRender()}`);
 };
 
 function writetoFile(fileName, data) {
@@ -50,7 +70,6 @@ function whichShape(answers) {
   switch (answers.shape) {
     case "Circle":
       returnCircle(answers);
-      console.log("this", `${renderCircle}`);
       break;
     case "Square":
       return returnSquare(answers);
@@ -58,7 +77,7 @@ function whichShape(answers) {
     case "Triangle":
       return returnTriangle(answers);
     default:
-      console.log(error);
+      console.log("switch", error);
       break;
   }
 }
@@ -69,7 +88,6 @@ function init() {
     .then((answers) => {
       console.log("checking", answers.shape);
       whichShape(answers);
-      // writetoFile("logo.svg", `${whichShape(answers.shape)}`);
     })
     .catch((error) => {
       if (error.isTtyError) {
