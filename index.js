@@ -100,4 +100,5 @@ function init() {
 
 init();
 
-module.exports = { whichShape, returnCircle };
+//Future Dev - create tests that terminate properly at the end of the tests for index.js
+// module.exports = { whichShape, returnCircle };
