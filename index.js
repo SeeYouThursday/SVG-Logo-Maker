@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const { Shape, Triangle, Circle, Square } = require("./lib/shapes");
+const { Triangle, Circle, Square } = require("./lib/shapes");
 const fs = require("fs");
 const { error } = require("console");
 // const Validate = require("./lib/validate");
@@ -40,6 +40,7 @@ const returnCircle = (answers) => {
 };
 
 const returnSquare = (answers) => {
+  //return new Square Constructor
   const square = new Square(
     answers.fillColor,
     answers.logoText,
@@ -50,6 +51,7 @@ const returnSquare = (answers) => {
 };
 
 const returnTriangle = (answers) => {
+  //return new Triangle Constructor
   const triangle = new Triangle(
     answers.fillColor,
     answers.logoText,
@@ -60,11 +62,11 @@ const returnTriangle = (answers) => {
 };
 
 function writetoFile(fileName, data) {
-  // console.log("checking which shape", whichShape(answers));
   fs.writeFile(`./dist/${fileName}`, data, (err) => {
     console.log(err);
   });
 }
+
 function whichShape(answers) {
   console.log("for switch", answers.shape);
   switch (answers.shape) {
@@ -86,7 +88,6 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      console.log("checking", answers.shape);
       whichShape(answers);
     })
     .catch((error) => {
