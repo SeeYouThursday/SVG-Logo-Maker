@@ -25,7 +25,7 @@ The user will open the main folder in the terminal. Then, enter "node index" int
 
 ### Screenshot and Walkthrough
 
-[Walkthrough Video](undefined)
+[Walkthrough Video](https://drive.google.com/file/d/1bk7NcpUMnABpFAsXy_EqVWmQLzHe5Jmp/view?usp=sharing)
 
 #### SVG Screenshot Preview
 
