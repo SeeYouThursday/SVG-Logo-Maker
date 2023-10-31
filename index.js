@@ -9,6 +9,10 @@ const questions = [
     type: "input",
     name: "logoText",
     message: "Enter up to 3 characters to render on your logo:", ////Going to need a validate here
+    validate: (logoText) =>
+      logoText.length < 4
+        ? true
+        : "Your logo text is too long! Max 3 Characters",
   },
   {
     type: "input",
@@ -31,9 +35,9 @@ const questions = [
 const returnCircle = (answers) => {
   //return new Circle Constructor
   const circle = new Circle(
-    answers.fillColor,
-    answers.logoText,
-    answers.textColor
+    answers.fillColor.toLowerCase(),
+    answers.logoText.toUpperCase(),
+    answers.textColor.toLowerCase()
   );
   circle.htmlRender();
   writetoFile("logo.svg", `${circle.htmlRender()}`);
