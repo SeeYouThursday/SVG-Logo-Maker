@@ -64,13 +64,12 @@ const returnTriangle = (answers) => {
 };
 
 function writetoFile(fileName, data) {
-  fs.writeFile(`./dist/${fileName}`, data, (err) => {
-    console.log(err);
-  });
+  fs.writeFile(`./dist/${fileName}`, data, (err) =>
+    err ? console.log(err) : console.log("Success!")
+  );
 }
 
 function whichShape(answers) {
-  console.log("for switch", answers.shape);
   switch (answers.shape) {
     case "Circle":
       returnCircle(answers);

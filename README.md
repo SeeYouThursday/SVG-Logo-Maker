@@ -1,6 +1,6 @@
 # SVG Logo Maker
 
-![Static Badge](https://img.shields.io/badge/MIT-content)
+![Static Badge](https://img.shields.io/badge/License:_MIT-content)
 
 ## Description
 
@@ -15,7 +15,7 @@ This application will help to automate the process of generating a basic logo wi
 - [License](#license)
 - [Questions](#questions)
 
-## Installation Requirements
+## Installation
 
 Install Inquirer v8.2.4 and Jest by running npm i after cloning the repo to your local IDE.
 
@@ -23,7 +23,17 @@ Install Inquirer v8.2.4 and Jest by running npm i after cloning the repo to your
 
 The user will open the main folder in the terminal. Then, enter "node index" into the terminal. Answer the questions accurately, while remembering to only use up to three characters for your logo text. The fill and text colors use color keywords. After answering the prompts, check the dist folder for your newly generated "logo.SVG" file.
 
+### Screenshot and Walkthrough
+
 [Walkthrough Video](undefined)
+
+#### SVG Screenshot Preview
+
+![#logo.svg file](./examples/logo.svg)
+
+#### Terminal Screenshot
+
+![#Terminal Screenshot](./examples/images/NodeTerminalExample.png)
 
 ## Contributing
 
