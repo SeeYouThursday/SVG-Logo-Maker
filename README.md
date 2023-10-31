@@ -4,7 +4,7 @@
 
 ## Description
 
-This application will help to automate the process of generating a basic logo with the choice of three basic shapes, circle, square, and triangle.
+This application will help to automate the process of generating a basic logo with the choice of three basic shapes, circle, square, and triangle. The user can customize the color of the shape and text color.
 
 ## Table of Contents
 
@@ -15,13 +15,14 @@ This application will help to automate the process of generating a basic logo wi
 - [License](#license)
 - [Questions](#questions)
 
-## Installation
+## Installation Requirements
 
 Install Inquirer v8.2.4 and Jest by running npm i after cloning the repo to your local IDE.
 
 ## Usage
 
-The user will open the main folder in the terminal. Then, enter "node index" into the terminal. Answer the questions accurately, while remembering to only use up to three characters for your logo text. The fill and text colors use color keywords. After answering the prompts, check the dist folder for your newly generated logo.SVG.undefined
+The user will open the main folder in the terminal. Then, enter "node index" into the terminal. Answer the questions accurately, while remembering to only use up to three characters for your logo text. The fill and text colors use color keywords. After answering the prompts, check the dist folder for your newly generated "logo.SVG" file.
+
 [Walkthrough Video](undefined)
 
 ## Contributing
