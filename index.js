@@ -65,7 +65,7 @@ const returnTriangle = (answers) => {
 
 function writetoFile(fileName, data) {
   fs.writeFile(`./dist/${fileName}`, data, (err) =>
-    err ? console.log(err) : console.log("Success!")
+    err ? console.log(err) : console.log("Generated logo.svg")
   );
 }
 
