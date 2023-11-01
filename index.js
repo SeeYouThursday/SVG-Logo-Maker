@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
-const { Triangle, Circle, Square } = require("./lib/shapes");
+const { whichShape } = require("./lib/generateSVG");
 
 const questions = [
   {
@@ -26,64 +25,10 @@ const questions = [
   {
     type: "input",
     name: "fillColor",
-    message: "Enter the fill color for your shape:", ////Validate for color? or use the class?
+    message: "Enter the fill color for your shape:",
+    //// future dev:Validate for color
   },
 ];
-
-const returnCircle = (answers) => {
-  //return new Circle Constructor
-  const circle = new Circle(
-    answers.fillColor.toLowerCase(),
-    answers.logoText.toUpperCase(),
-    answers.textColor.toLowerCase()
-  );
-  circle.htmlRender();
-  writetoFile("logo.svg", `${circle.htmlRender()}`);
-};
-
-const returnSquare = (answers) => {
-  //return new Square Constructor
-  const square = new Square(
-    answers.fillColor,
-    answers.logoText,
-    answers.textColor
-  );
-  square.htmlRender();
-  writetoFile("logo.svg", `${square.htmlRender()}`);
-};
-
-const returnTriangle = (answers) => {
-  //return new Triangle Constructor
-  const triangle = new Triangle(
-    answers.fillColor,
-    answers.logoText,
-    answers.textColtriangle
-  );
-  triangle.htmlRender();
-  writetoFile("logo.svg", `${triangle.htmlRender()}`);
-};
-
-function writetoFile(fileName, data) {
-  fs.writeFile(`./dist/${fileName}`, data, (err) =>
-    err ? console.log(err) : console.log("Generated logo.svg")
-  );
-}
-
-function whichShape(answers) {
-  switch (answers.shape) {
-    case "Circle":
-      returnCircle(answers);
-      break;
-    case "Square":
-      return returnSquare(answers);
-      break;
-    case "Triangle":
-      return returnTriangle(answers);
-    default:
-      console.log("switch", error);
-      break;
-  }
-}
 
 function init() {
   inquirer
