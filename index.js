@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const { whichShape } = require("./lib/generateSVG");
 
-//prompts for user to create svg logo
+//prompts for user to create svg logo 
 const questions = [
   {
     type: "input",
